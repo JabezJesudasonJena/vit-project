@@ -14,6 +14,7 @@ import {
   Lightbulb
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { api } from '@/lib/api';
 
 type HealthTip = {
   id: number;
@@ -28,7 +29,7 @@ export default function Home() {
   const [tipOfTheDay, setTipOfTheDay] = useState<HealthTip | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/health-tips')
+    fetch(api.healthTips)
       .then(res => res.json())
       .then(data => {
         if (data.success) {

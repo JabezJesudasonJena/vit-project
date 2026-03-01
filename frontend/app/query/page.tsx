@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { MessageSquare, AlertCircle, Clock, Stethoscope } from 'lucide-react';
+import { api } from '@/lib/api';
 
 type QuerySubmission = {
   patientName: string;
@@ -46,7 +47,7 @@ export default function QueryPage() {
     console.log('Query Submission:', formData);
 
     try {
-      const response = await fetch('http://localhost:5000/api/query', {
+      const response = await fetch(api.query, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

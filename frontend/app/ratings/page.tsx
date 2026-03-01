@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Star, ArrowLeft, Send, User, MessageSquare } from 'lucide-react';
+import { api } from '@/lib/api';
 
 type Review = {
   id: number;
@@ -23,7 +24,7 @@ type Doctor = {
   totalReviews: number;
 };
 
-export default function RatingsPage() {
+function RatingsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const doctorIdParam = searchParams.get('doctorId');
@@ -57,7 +58,7 @@ export default function RatingsPage() {
 
   const fetchDoctors = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/doctors');
+      const response = await fetch(api.doctors);
       const data = await response.json();
       if (data.success) {
         // Add mock rating data
@@ -75,7 +76,7 @@ export default function RatingsPage() {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/ratings');
+      const response = await fetch(api.ratings);
       const data = await response.json();
       if (data.success) {
         setReviews(data.reviews);
@@ -126,7 +127,7 @@ export default function RatingsPage() {
     };
 
     try {
-      await fetch('http://localhost:5000/api/ratings', {
+      await fetch(api.ratings, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newReview)
@@ -341,5 +342,17 @@ export default function RatingsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RatingsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center">
+        <div className="animate-spin w-8 h-8 border-2 border-violet-500 border-t-transparent rounded-full" />
+      </div>
+    }>
+      <RatingsContent />
+    </Suspense>
   );
 }

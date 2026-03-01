@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Phone, AlertTriangle, MapPin, Heart, Shield, ArrowLeft, Loader2 } from 'lucide-react';
+import { api } from '@/lib/api';
 
 type EmergencyContact = {
   name: string;
@@ -26,7 +27,7 @@ export default function EmergencyPage() {
 
   useEffect(() => {
     // Fetch emergency contacts
-    fetch('http://localhost:5000/api/emergency')
+    fetch(api.emergency)
       .then(res => res.json())
       .then(data => {
         if (data.success) setContacts(data.contacts);
@@ -69,7 +70,7 @@ export default function EmergencyPage() {
   const triggerSOS = async () => {
     setSosTriggered(true);
     try {
-      const response = await fetch('http://localhost:5000/api/emergency/sos', {
+      const response = await fetch(api.emergencySOS, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(sosData),

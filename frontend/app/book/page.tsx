@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Calendar, Clock, User, ArrowLeft, Check, Loader2 } from 'lucide-react';
+import { api } from '@/lib/api';
 
 type DoctorSlot = {
   doctorId: number;
@@ -47,7 +48,7 @@ export default function BookAppointmentPage() {
       if (filter.specialty) params.append('specialty', filter.specialty);
       if (filter.date) params.append('date', filter.date);
 
-      const response = await fetch(`http://localhost:5000/api/doctors/slots?${params}`);
+      const response = await fetch(`${api.doctorSlots}?${params}`);
       const data = await response.json();
       if (data.success) {
         setSlots(data.slots);
@@ -64,7 +65,7 @@ export default function BookAppointmentPage() {
 
     setBooking(true);
     try {
-      const response = await fetch('http://localhost:5000/api/doctors/slots/book', {
+      const response = await fetch(api.bookSlot, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

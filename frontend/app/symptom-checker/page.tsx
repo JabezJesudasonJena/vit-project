@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Brain, AlertTriangle, Stethoscope, ArrowRight, Loader2, ArrowLeft } from 'lucide-react';
+import { api } from '@/lib/api';
 
 type ConditionResult = {
   condition: string;
@@ -49,7 +50,7 @@ export default function SymptomCheckerPage() {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/symptom-checker', {
+      const response = await fetch(api.symptomChecker, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

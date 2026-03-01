@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Heart, Mail, Phone, MapPin, Lock, User, Calendar } from 'lucide-react';
+import { api } from '@/lib/api';
 
 export default function RegistrationPage() {
   const router = useRouter();
@@ -49,7 +50,7 @@ export default function RegistrationPage() {
     setSubmitError(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/signup', {
+      const response = await fetch(api.signup, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
