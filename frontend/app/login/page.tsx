@@ -72,7 +72,7 @@ export default function LoginPage() {
                 <Heart size={32} className="text-white" />
               </div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent">
-                HealthSync
+                Surakshadwaar
               </h1>
             </div>
             <p className="text-slate-400">Welcome back! Please sign in to continue.</p>

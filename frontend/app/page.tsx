@@ -112,7 +112,7 @@ export default function Home() {
               <Heart size={24} className="text-white" />
             </div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent">
-              HealthSync
+              Surakshadwaar
             </h1>
           </div>
           <div className="flex items-center gap-3">
@@ -266,7 +266,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-slate-700/50 mt-20 py-8 px-6">
         <div className="max-w-7xl mx-auto text-center text-slate-500 text-sm">
-          <p>© 2026 HealthSync Medical Systems. All rights reserved.</p>
+          <p>© 2026 Surakshadwaar Medical Systems. All rights reserved.</p>
           <p className="mt-2">Built for Healthcare Hackathon - Patient Query & Appointment Interface</p>
         </div>
       </footer>

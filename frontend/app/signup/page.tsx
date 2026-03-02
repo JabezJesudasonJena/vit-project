@@ -92,7 +92,7 @@ export default function RegistrationPage() {
               <div className="p-2 bg-gradient-to-br from-violet-600 to-blue-600 rounded-lg group-hover:shadow-lg group-hover:shadow-violet-500/50 transition-all">
                 <Heart size={24} className="text-white" />
               </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent">HealthSync</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent">Surakshadwaar</h1>
             </div>
             <button
               onClick={() => router.push('/login')}
@@ -329,7 +329,7 @@ export default function RegistrationPage() {
 
         {/* Footer */}
         <footer className="border-t border-slate-700/50 bg-slate-900/30 backdrop-blur-xl py-6 px-6 md:px-20 text-center text-slate-400 text-sm">
-          <p>© 2024 HealthSync Medical Systems. All rights reserved.</p>
+          <p>© 2024 Surakshadwaar Medical Systems. All rights reserved.</p>
         </footer>
       </div>
     </div>

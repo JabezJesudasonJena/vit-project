@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "HealthSync - Patient Doctor Appointment System",
+  title: "Surakshadwaar - Patient Doctor Appointment System",
   description: "Professional healthcare query and appointment management system",
 };
 

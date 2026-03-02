@@ -55,7 +55,7 @@ const dataStore = {
       specialty: 'Cardiologist',
       date: '2026-03-05',
       time: '10:00 AM',
-      location: 'HealthSync Main Clinic',
+      location: 'Surakshadwaar Main Clinic',
       status: 'Confirmed',
       reason: 'Follow-up checkup'
     }
@@ -74,7 +74,7 @@ const dataStore = {
   // Emergency contacts
   emergencyContacts: [
     { name: 'Emergency Services', number: '911', type: 'emergency' },
-    { name: 'HealthSync Helpline', number: '1-800-HEALTH', type: 'helpline' },
+    { name: 'Surakshadwaar Helpline', number: '1-800-HEALTH', type: 'helpline' },
     { name: 'Mental Health Crisis', number: '988', type: 'mental_health' },
     { name: 'Poison Control', number: '1-800-222-1222', type: 'poison' }
   ],

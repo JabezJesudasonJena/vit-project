@@ -19,7 +19,7 @@ const patientAppointments: PatientAppointment[] = [
     specialty: 'Cardiologist',
     date: '2026-03-02',
     time: '10:00 AM',
-    location: 'HealthSync Main Clinic',
+    location: 'Surakshadwaar Main Clinic',
     status: 'Confirmed'
   },
   {
@@ -28,7 +28,7 @@ const patientAppointments: PatientAppointment[] = [
     specialty: 'General Physician',
     date: '2026-03-05',
     time: '04:30 PM',
-    location: 'HealthSync Downtown Center',
+    location: 'Surakshadwaar Downtown Center',
     status: 'Pending'
   },
   {

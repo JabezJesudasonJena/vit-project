@@ -76,7 +76,7 @@ router.post('/slots/book', (req, res) => {
     specialty: slot.specialty,
     date: slot.date,
     time: slot.time,
-    location: 'HealthSync Main Clinic',
+    location: 'Surakshadwaar Main Clinic',
     status: 'Confirmed',
     reason,
     createdAt: new Date().toISOString()
